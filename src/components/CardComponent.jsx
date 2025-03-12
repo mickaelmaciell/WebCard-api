@@ -35,7 +35,7 @@ export default function CardComponents({ cartao }) {
             <p className="text-white text-[20px] font-bold">{cartao.name || "Nome do Cartão"}</p>  
           </div>  
         </div>  
-      ) : (  
+      ) : (  //verso
         <div className="w-[480px] h-[280px] bg-gray-800 rounded-[20px] mt-[30px] ml-[70px] flex items-center justify-center text-white">  
            <div className="w-full h-[30%] flex items-end">
               <div className="w-full h-[75%] bg-neutral-900"></div>
