@@ -19,7 +19,7 @@ export default function PageCartoes(){
             </div>
             <div className="w-full h-auto flex flex-wrap">
                 {cartoes.map((event) => {
-                    return <CardComponent key={event._id} nome={event.name} numero={event.number}/>
+                    return <CardComponent key={event._id} cartao={event}/>
                 })}
             </div>
         </div>

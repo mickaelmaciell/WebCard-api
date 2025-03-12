@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FcSimCardChip } from "react-icons/fc";  
 import { LuNfc } from "react-icons/lu";  
 
-export default function CardComponents({ nome, numero }) {  
+export default function CardComponents({ cartao }) {  
   const [sideCartao, setSideCartao] = useState("front");  
 
   useEffect(() => {  
@@ -31,8 +31,8 @@ export default function CardComponents({ nome, numero }) {
             <LuNfc size={30} color="#ffffff" />  
           </div>  
           <div className="w-full pl-[27px]">  
-            <p className="text-[30px] text-white">{numero || "0000 0000 0000 0000"}</p>  
-            <p className="text-white text-[20px] font-bold">{nome || "Nome do Cartão"}</p>  
+            <p className="text-[30px] text-white">{cartao.number || "0000 0000 0000 0000"}</p>  
+            <p className="text-white text-[20px] font-bold">{cartao.name || "Nome do Cartão"}</p>  
           </div>  
         </div>  
       ) : (  
@@ -42,7 +42,7 @@ export default function CardComponents({ nome, numero }) {
             </div>
             <div className="w-full h-[70%] flex justify-center pt-[30px]">
                 <div className="w-[70%] h-[55px] bg-gray-500 flex justify-end items-center pr-[20px]">
-                  <p className="text-[26px]">000</p>
+                  <p className="text-[26px]">{cartao.cvv || "000"}</p>
                 </div>
             </div>
           </div>  
