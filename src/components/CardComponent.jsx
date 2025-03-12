@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";  
 import { FcSimCardChip } from "react-icons/fc";  
 import { LuNfc } from "react-icons/lu";  
+import ModalCartao from "./ModalCartao";
 
 export default function CardComponents({ cartao }) {  
   const [sideCartao, setSideCartao] = useState("front");  
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {  
     console.log(sideCartao);  
@@ -14,8 +16,9 @@ export default function CardComponents({ cartao }) {
       onMouseEnter={() => setSideCartao("back")}  
       onMouseLeave={() => setSideCartao("front")}  
       className="cursor-pointer"  
+      onClick={() => setModal(true)}
     >  
-      {sideCartao === "front" ? (  
+      {sideCartao === "front" ? (   
         <div className="w-[480px] h-[280px] bg-black rounded-[20px] mt-[30px] ml-[70px]">  
           <div className="w-full h-[30%] flex">  
             <div className="w-[30%] h-full flex items-center justify-center gap-[5px]">  
@@ -47,6 +50,11 @@ export default function CardComponents({ cartao }) {
             </div>
           </div>  
       )}  
+      {
+        modal && (
+          <ModalCartao/>
+        )
+      }
     </div>  
   );  
 }  
