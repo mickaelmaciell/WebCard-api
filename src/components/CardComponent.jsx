@@ -13,7 +13,7 @@ export default function CardComponents({ cartao }) {
     <div  
       onMouseEnter={() => setSideCartao("back")}  
       onMouseLeave={() => setSideCartao("front")}  
-      className=""  
+      className="cursor-pointer"  
     >  
       {sideCartao === "front" ? (  
         <div className="w-[480px] h-[280px] bg-black rounded-[20px] mt-[30px] ml-[70px]">  
